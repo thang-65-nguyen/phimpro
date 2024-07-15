@@ -1,0 +1,12 @@
+.slick-prev {
+  left: 80px !important;
+  z-index: 1;
+}
+.slick-next {
+  right: 80px !important;
+  z-index: 1;
+}
+.slick-prev::before,
+.slick-next::before {
+  display: none; /* Ẩn văn bản mặc định */
+}

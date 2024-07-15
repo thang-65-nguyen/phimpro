@@ -1,0 +1,64 @@
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width: 320px) {
+  .MovieResponsive {
+    width: 100%;
+    height: 100vh;
+    padding: 20px 10px;
+  }
+  .WatchVideoMobile {
+    height: 200px;
+  }
+  .SelectFilm {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .ControlFilm {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .MovieName {
+    font-size: 14px;
+    line-height: 1.75rem;
+  }
+  .SubMovieName {
+    font-size: 11px;
+    line-height: 1.25rem;
+  }
+}
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width: 481px) {
+}
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width: 641px) {
+}
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+  .MovieResponsive {
+    width: 1140px;
+    padding: 20px 0;
+  }
+  .WatchVideoMobile {
+    height: 450px;
+  }
+  .SelectFilm {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .ControlFilm {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+  .MovieName {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem; /* 28px */
+  }
+  .SubMovieName {
+    font-size: 14px;
+    line-height: 1.25rem;
+  }
+}
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
+}
