@@ -17,12 +17,10 @@ const DescribeMovie = () => {
       setIsLoading(true);
       try {
         const response = await fetch(`https://phimapi.com/phim/${slug}`);
-
         if (!response.ok) {
           throw new Error("Không thể kết nối đến API thể loại");
         }
         const data = await response.json();
-
         const episodes = data.episodes.flatMap((chapter) =>
           chapter.server_data.map((data) => ({
             name: data.name,

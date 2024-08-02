@@ -21,10 +21,9 @@ const ListFilm = () => {
         throw new Error("Không thể kết nối đến API thể loại");
       }
       const data = await response.json();
-
       const { seoOnPage, items, titlePage, params, type_list } = data.data;
       setMovie({ seoOnPage, items, titlePage });
-      setTypeList(type_list); // Lưu trữ giá trị type_list vào state
+      setTypeList(type_list); 
       if (params && params.pagination) {
         const { totalPages } = params.pagination;
         setTotalPages(totalPages);

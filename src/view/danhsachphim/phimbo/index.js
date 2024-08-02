@@ -16,13 +16,11 @@ const ListFilmPhimBo = () => {
       const response = await fetch(
         `https://phimapi.com/v1/api/danh-sach/phim-bo?limit=32&page=${page}`
       );
-      console.log(response);
+
       if (!response.ok) {
         throw new Error("Không thể kết nối đến API thể loại");
       }
       const data = await response.json();
-      console.log(data);
-
       const { seoOnPage, items, titlePage, params, type_list } = data.data;
       setMovie({ seoOnPage, items, titlePage });
       setTypeList(type_list);

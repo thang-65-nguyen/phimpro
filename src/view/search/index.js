@@ -20,14 +20,13 @@ const SearchResultsPage = () => {
           const response = await fetch(
             `https://phimapi.com/v1/api/tim-kiem?keyword=${keywordParam}`
           );
-          console.log(response);
           if (!response.ok) {
-            toast.error("Không thể kết nối đến API");
+            console.log("Không thể kết nối đến API");
             return;
           }
           const data = await response.json();
           if (!data.data || !data.data.items) {
-            toast.error("Dữ liệu không hợp lệ từ API");
+            console.log("Dữ liệu không hợp lệ từ API");
             return;
           }
           setSearchResults(data.data.items);
@@ -55,17 +54,15 @@ const SearchResultsPage = () => {
   };
 
   return (
-    <div className="md:w-[1600px] w-full mx-auto">
+    <div className="max-w-[1600px] w-full mx-auto overflow-x-visible">
       {loading && (
         <div className="w-full h-full bg-black fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-10">
-          <div>
-            <img
-              src="https://phimpro-nhidev-nhidevelopers-projects.vercel.app/assets/loadlurk-loading-D9YCxDIJ.gif"
-              className="w-[100px] h-[100px]"
-              alt=""
-            />
-            <p className="text-2xl text-white mt-4">Loading...</p>
-          </div>
+          <img
+            src="https://phimpro-nhidev-nhidevelopers-projects.vercel.app/assets/loadlurk-loading-D9YCxDIJ.gif"
+            className="w-[100px] h-[100px]"
+            alt=""
+          />
+          <p className="text-2xl text-white mt-4">Loading...</p>
         </div>
       )}
       <div
@@ -88,7 +85,7 @@ const SearchResultsPage = () => {
                 alt={movie.name}
               />
               <div className="px-6 overflow-hidden">
-                <p className="text-xl mt-1 group-hover:text-white text-[#9e9dba]  font-bold whitespace-nowrap text-ellipsis overflow-hidden">
+                <p className="text-xl mt-1 group-hover:text-white text-[#9e9dba] font-bold whitespace-nowrap text-ellipsis overflow-hidden">
                   {movie.name}
                 </p>
                 <div className="flex gap-2 mt-2">
@@ -119,12 +116,12 @@ const SearchResultsPage = () => {
                     Thời lượng: {movie.time}
                   </div>
                   <div className="text-[#9e9dba] font-bold line-clamp-1 w-full">
-                    Thể loại:{" "}
+                    Thể loại:
                     {movie.category.map((category, index) => (
-                      <>
+                      <div key={index}>
                         {category.name}
                         {index < movie.category.length - 1 && ", "}
-                      </>
+                      </div>
                     ))}
                   </div>
                 </div>

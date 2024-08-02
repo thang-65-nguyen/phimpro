@@ -18,7 +18,6 @@ const WatchMovie = () => {
     const fetchApiData = async () => {
       try {
         const response = await fetch(`https://phimapi.com/phim/${slug}`);
-        console.log(response, "rs");
         if (!response.ok) {
           throw new Error("Không thể kết nối đến API thể loại");
         }
@@ -84,7 +83,7 @@ const WatchMovie = () => {
     } else {
       document.title = "Phim Mới";
     }
-  }, [movie]);
+  }, [currentEpisodeIndex, episodes, movie]);
   return (
     <div className="px-4 pt-[120px] flex mx-auto bg-[#0f0f0f]">
       {isLoading && (
